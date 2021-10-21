@@ -1,7 +1,5 @@
-import express from "express";
+import express, { Request, Response } from "express";
 import { graphqlHTTP } from "express-graphql";
-
-// import { schema, rootValue } from "./graphql";
 
 import schema from "./graphql/schema";
 
@@ -16,7 +14,7 @@ app.use(
   })
 );
 
-app.get("/", (req, res) => {
+app.get("/", (req: Request, res: Response) => {
   res.send("Hello world.");
 });
 
